@@ -1,0 +1,124 @@
+[serial]
+port = "/dev/cu.usbserial-0001"
+baudrate = 921600
+timeout_s = 0.20
+write_timeout_s = 0.20
+retries = 3
+
+[hardware]
+connected_motors = 6
+
+[instrument]
+# Default instrument-aware arrangement/calibration profile. Phase 1 loads and
+# validates this profile, but does not change note assignment behavior yet.
+profile = "profiles/default_instrument.toml"
+
+[pipeline]
+idle_mode = "idle"
+overflow_mode = "steal_quietest"
+min_freq_hz = 10.0
+max_freq_hz = 800
+auto_transpose = true
+sticky_gap_ms = 50
+# When true, mirror the detected melody onto one extra motor. If the MIDI has
+# an explicit lead/melody/vocal/solo track, prefer that; otherwise fall back to
+# the top active voice heuristic.
+double_melody = false
+# The host keeps a future-intent buffer full, but firmware owns playback
+# timing and event-boundary execution.
+lookahead_ms = 2000
+lookahead_strategy = "p95"
+lookahead_min_ms = 400
+lookahead_percentile = 95
+lookahead_min_segments = 24
+
+[homing]
+auto_home = false
+steps_per_rev = 800
+home_start_hz = 120.0
+home_hz = 160.0
+home_accel_hz_per_s = 240.0
+
+[warmups]
+# Select any warmups and order here; they run before song playback starts.
+# sequence = [
+#   "slot_machine_lock_in",
+#   "domino_ripple",
+#   "turbine_spool_up",
+#   "center_splash",
+#   "phase_alignment",
+#   "chord_bloom",
+#   "pentatonic_cascade",
+#   "whole_tone_shimmer",
+#   "blues_stagger",
+#   "zigzag_march",
+#   "wave_cascade",
+#   "mirror_sweep",
+#   "harmonic_series",
+#   "chromatic_converge",
+#   "minor_cascade",
+#   "gradient_tilt",
+#   "pendulum_sync",
+#   "scatter_bloom",
+# ]
+sequence = ["chord_bloom"]
+# Home once before warmups so aligned routines can resolve to a true 12:00 stop.
+require_home_before_sequence = true
+# Left-to-right physical order mapping for warmup choreography.
+# logical warmup positions 0..5 -> physical motor indices.
+motor_order = [4, 2, 1, 3, 0, 5]
+# Conservative warmup acceleration cap; lower values reduce skip risk.
+max_accel_hz_per_s = 180.0
+
+[warmups.speed_multipliers]
+# Optional per-routine speed multipliers (1.0 = default).
+# slot_machine_lock_in = 1.0
+# domino_ripple = 3.0
+# turbine_spool_up = 1.0
+# center_splash = 1.0
+# phase_alignment = 1.0
+# chord_bloom = 1.0
+
+[playback]
+# Countdown between pressing Enter and starting warmups/song playback.
+startup_countdown_s = 6
+# When true, playback flips a motor's DIR pin when that motor changes to a
+# different note. Same-pitch re-hits keep their current direction. This is an
+# opt-in visual/mechanical effect rather than the default quality baseline.
+flip_direction_on_note_change = false
+# Suppress compiler-emitted flips when the note window is tighter than the
+# estimated stop-and-restart transition the firmware can safely perform.
+suppress_tight_direction_flips = true
+# Keep one motor from ping-ponging through back-to-back flips in dense passages.
+direction_flip_cooldown_ms = 150.0
+# Optional extra margin on top of the estimated transition window.
+direction_flip_safety_margin_ms = 50.0
+# Continuous playback launch/run profile for the MCPWM song-playback engine.
+run_accel_hz_per_s = 8000.0
+launch_start_hz = 60.0
+launch_accel_hz_per_s = 5000.0
+launch_crossover_hz = 180.0
+
+[ui]
+host = "127.0.0.1"
+port = 8765
+static_dir = "ui/dashboard/dist"
+# available themes: neon, retro, minimal, oceanic, terminal, sunset, chalkboard, blueprint, holographic, botanical
+theme = "neon"
+# global color mode for note bars/active keys:
+# monochrome_accent, channel, octave_bands, frequency_bands, motor_slot, velocity_intensity
+color_mode = "frequency_bands"
+# optional allowed modes exposed in the UI selector (empty/omitted => all):
+color_modes = [
+  "monochrome_accent",
+  "channel",
+  "octave_bands",
+  "frequency_bands",
+  "motor_slot",
+  "velocity_intensity",
+]
+# show theme/color control bars at top of the dashboard
+show_controls = false
+# signed UI sync offset in ms: positive delays UI, negative advances UI
+sync_offset_ms = 0.0
+verbose = true

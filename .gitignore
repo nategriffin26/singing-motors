@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+.cache/
+*.egg-info/
+.eggs/
+
+# Frontend (Vite/Node)
+ui/dashboard/node_modules/
+ui/dashboard/dist/
+ui/dashboard/.vite/
+ui/dashboard/npm-debug.log*
+
+# Firmware build artifacts
+firmware/esp32/build/
+firmware/esp32/.pio/
+firmware/esp32/.cache/
+firmware/esp32/sdkconfig
+firmware/esp32/sdkconfig.*

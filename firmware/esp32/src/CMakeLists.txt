@@ -1,0 +1,22 @@
+idf_component_register(
+  SRCS
+    "main.c"
+    "motor_event_executor.c"
+    "motion_commands.c"
+    "playback_runtime.c"
+    "playback_wave_engine.c"
+    "pulse_accounting.c"
+    "protocol_codec.c"
+    "stream_parser.c"
+    "stream_queue.c"
+    "pulse_engine.c"
+  INCLUDE_DIRS
+    "."
+  PRIV_REQUIRES
+    esp_driver_uart
+    esp_driver_gpio
+    esp_driver_gptimer
+    esp_driver_mcpwm
+    esp_driver_pcnt
+    esp_timer
+)
