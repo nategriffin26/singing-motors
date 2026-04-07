@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {"phrase_id": "hello-nate", "text": "hello nate", "tags": ["name", "warmup"], "preset": "robot_clear"},
+    {"phrase_id": "codex-ready", "text": "codex is ready", "tags": ["status"], "preset": "robot_clear"},
+    {"phrase_id": "play-motors", "text": "play the motors", "tags": ["command"], "preset": "command_voice"},
+    {"phrase_id": "testing-count", "text": "testing one two three", "tags": ["count"], "preset": "robot_fast"},
+    {"phrase_id": "please-start", "text": "please start now", "tags": ["command"], "preset": "command_voice"},
+    {"phrase_id": "ship-it", "text": "ship it", "tags": ["short"], "preset": "robot_clear"},
+    {"phrase_id": "stop", "text": "stop", "tags": ["short", "command"], "preset": "command_voice"},
+    {"phrase_id": "yes", "text": "yes", "tags": ["short"], "preset": "robot_clear"},
+    {"phrase_id": "no", "text": "no", "tags": ["short"], "preset": "robot_clear"}
+  ]
+}

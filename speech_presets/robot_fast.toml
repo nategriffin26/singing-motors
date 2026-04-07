@@ -1,0 +1,47 @@
+[preset]
+display_name = "Robot Fast"
+base_f0_hz = 128.0
+pitch_span_hz = 30.0
+frame_ms = 16
+word_gap_ms = 12
+pause_ms = 90
+burst_ms = 28
+safe_event_rate_hz = 52.0
+vibrato_hz = 3.8
+vibrato_depth_hz = 3.4
+emphasis_duplication = 0.52
+acoustic_oracle_blend = 0.60
+acoustic_transition_ms = 30
+acoustic_release_ms = 44
+speech_assist_control_interval_us = 350
+speech_assist_release_accel_hz_per_s = 4200.0
+
+[[lanes]]
+min_hz = 76.0
+max_hz = 185.0
+smoothing = 0.58
+
+[[lanes]]
+min_hz = 130.0
+max_hz = 290.0
+smoothing = 0.46
+
+[[lanes]]
+min_hz = 225.0
+max_hz = 435.0
+smoothing = 0.36
+
+[[lanes]]
+min_hz = 350.0
+max_hz = 560.0
+smoothing = 0.32
+
+[[lanes]]
+min_hz = 470.0
+max_hz = 760.0
+smoothing = 0.64
+
+[[lanes]]
+min_hz = 160.0
+max_hz = 390.0
+smoothing = 0.38

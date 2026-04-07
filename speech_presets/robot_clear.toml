@@ -1,0 +1,47 @@
+[preset]
+display_name = "Robot Clear"
+base_f0_hz = 118.0
+pitch_span_hz = 26.0
+frame_ms = 20
+word_gap_ms = 18
+pause_ms = 130
+burst_ms = 42
+safe_event_rate_hz = 50.0
+vibrato_hz = 2.6
+vibrato_depth_hz = 2.8
+emphasis_duplication = 0.46
+acoustic_oracle_blend = 0.58
+acoustic_transition_ms = 44
+acoustic_release_ms = 68
+speech_assist_control_interval_us = 500
+speech_assist_release_accel_hz_per_s = 2800.0
+
+[[lanes]]
+min_hz = 70.0
+max_hz = 170.0
+smoothing = 0.60
+
+[[lanes]]
+min_hz = 120.0
+max_hz = 260.0
+smoothing = 0.48
+
+[[lanes]]
+min_hz = 210.0
+max_hz = 410.0
+smoothing = 0.42
+
+[[lanes]]
+min_hz = 320.0
+max_hz = 520.0
+smoothing = 0.38
+
+[[lanes]]
+min_hz = 420.0
+max_hz = 690.0
+smoothing = 0.66
+
+[[lanes]]
+min_hz = 150.0
+max_hz = 360.0
+smoothing = 0.44

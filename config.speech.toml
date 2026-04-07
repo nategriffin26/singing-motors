@@ -1,0 +1,10 @@
+[speech]
+default_backend = "auto"
+default_voice = "en-us"
+default_preset = "robot_clear"
+default_engine = "acoustic_v2"
+frame_ms = 20
+safe_event_rate_hz = 45.0
+
+[evaluation]
+corpus_path = "assets/speech_corpus/default.json"

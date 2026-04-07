@@ -1,0 +1,110 @@
+[instrument]
+name = "default_bench_6motor_v2"
+profile_version = 1
+motor_count = 6
+description = "Default six-motor shared profile for identical open-loop steppers. Tuned to preserve Phase 3 arrangement quality while widening the preferred operating window for lower comfort pressure."
+calibration_schema_version = 1
+calibration_measurement_date = ""
+calibration_firmware_version = ""
+calibration_operator = ""
+calibration_hardware_notes = ""
+
+[[instrument.motors]]
+motor_idx = 0
+label = "motor_0"
+min_hz = 15.0
+max_hz = 800.0
+preferred_min_hz = 40.0
+preferred_max_hz = 800.0
+launch_start_hz = 60.0
+launch_crossover_hz = 180.0
+safe_reverse_min_gap_ms = 10.0
+safe_reverse_margin_ms = 4.0
+weight_pitch_stability = 1.0
+weight_attack_cleanliness = 1.0
+weight_sustain_quality = 1.0
+
+[[instrument.motors]]
+motor_idx = 1
+label = "motor_1"
+min_hz = 15.0
+max_hz = 800.0
+preferred_min_hz = 15.0
+preferred_max_hz = 30.0
+launch_start_hz = 60.0
+launch_crossover_hz = 180.0
+safe_reverse_min_gap_ms = 10.0
+safe_reverse_margin_ms = 4.0
+weight_pitch_stability = 1.0
+weight_attack_cleanliness = 2.0
+weight_sustain_quality = 2.0
+resonance_bands = [
+  { start_hz = 30.0, end_hz = 45.0, severity = 0.45, label = "upper_rumble_transition" },
+]
+avoid_bands = [
+  { start_hz = 45.0, end_hz = 800.0, severity = 1.0, label = "upper_rumble_avoid" },
+]
+operator_notes = [
+  "Upper-register rumble observed on this motor; prefer other motors above roughly 30 Hz when possible.",
+  "Keep the full range available as a fallback so dense passages can still use this motor when necessary.",
+]
+
+[[instrument.motors]]
+motor_idx = 2
+label = "motor_2"
+min_hz = 15.0
+max_hz = 800.0
+preferred_min_hz = 40.0
+preferred_max_hz = 800.0
+launch_start_hz = 60.0
+launch_crossover_hz = 180.0
+safe_reverse_min_gap_ms = 10.0
+safe_reverse_margin_ms = 4.0
+weight_pitch_stability = 1.0
+weight_attack_cleanliness = 1.0
+weight_sustain_quality = 1.0
+
+[[instrument.motors]]
+motor_idx = 3
+label = "motor_3"
+min_hz = 15.0
+max_hz = 800.0
+preferred_min_hz = 40.0
+preferred_max_hz = 800.0
+launch_start_hz = 60.0
+launch_crossover_hz = 180.0
+safe_reverse_min_gap_ms = 10.0
+safe_reverse_margin_ms = 4.0
+weight_pitch_stability = 1.0
+weight_attack_cleanliness = 1.0
+weight_sustain_quality = 1.0
+
+[[instrument.motors]]
+motor_idx = 4
+label = "motor_4"
+min_hz = 15.0
+max_hz = 800.0
+preferred_min_hz = 40.0
+preferred_max_hz = 800.0
+launch_start_hz = 60.0
+launch_crossover_hz = 180.0
+safe_reverse_min_gap_ms = 10.0
+safe_reverse_margin_ms = 4.0
+weight_pitch_stability = 1.0
+weight_attack_cleanliness = 1.0
+weight_sustain_quality = 1.0
+
+[[instrument.motors]]
+motor_idx = 5
+label = "motor_5"
+min_hz = 15.0
+max_hz = 800.0
+preferred_min_hz = 40.0
+preferred_max_hz = 800.0
+launch_start_hz = 60.0
+launch_crossover_hz = 180.0
+safe_reverse_min_gap_ms = 10.0
+safe_reverse_margin_ms = 4.0
+weight_pitch_stability = 1.0
+weight_attack_cleanliness = 1.0
+weight_sustain_quality = 1.0

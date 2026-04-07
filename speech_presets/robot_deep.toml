@@ -1,0 +1,47 @@
+[preset]
+display_name = "Robot Deep"
+base_f0_hz = 92.0
+pitch_span_hz = 18.0
+frame_ms = 22
+word_gap_ms = 24
+pause_ms = 140
+burst_ms = 38
+safe_event_rate_hz = 40.0
+vibrato_hz = 1.8
+vibrato_depth_hz = 1.8
+emphasis_duplication = 0.36
+acoustic_oracle_blend = 0.52
+acoustic_transition_ms = 52
+acoustic_release_ms = 80
+speech_assist_control_interval_us = 600
+speech_assist_release_accel_hz_per_s = 2400.0
+
+[[lanes]]
+min_hz = 58.0
+max_hz = 138.0
+smoothing = 0.64
+
+[[lanes]]
+min_hz = 95.0
+max_hz = 210.0
+smoothing = 0.52
+
+[[lanes]]
+min_hz = 170.0
+max_hz = 330.0
+smoothing = 0.45
+
+[[lanes]]
+min_hz = 250.0
+max_hz = 450.0
+smoothing = 0.40
+
+[[lanes]]
+min_hz = 360.0
+max_hz = 620.0
+smoothing = 0.68
+
+[[lanes]]
+min_hz = 130.0
+max_hz = 300.0
+smoothing = 0.50

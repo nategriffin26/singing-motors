@@ -1,0 +1,47 @@
+[preset]
+display_name = "Command Voice"
+base_f0_hz = 108.0
+pitch_span_hz = 22.0
+frame_ms = 18
+word_gap_ms = 16
+pause_ms = 110
+burst_ms = 34
+safe_event_rate_hz = 46.0
+vibrato_hz = 2.0
+vibrato_depth_hz = 1.5
+emphasis_duplication = 0.60
+acoustic_oracle_blend = 0.62
+acoustic_transition_ms = 36
+acoustic_release_ms = 54
+speech_assist_control_interval_us = 400
+speech_assist_release_accel_hz_per_s = 3600.0
+
+[[lanes]]
+min_hz = 68.0
+max_hz = 155.0
+smoothing = 0.62
+
+[[lanes]]
+min_hz = 118.0
+max_hz = 255.0
+smoothing = 0.48
+
+[[lanes]]
+min_hz = 205.0
+max_hz = 395.0
+smoothing = 0.41
+
+[[lanes]]
+min_hz = 325.0
+max_hz = 540.0
+smoothing = 0.37
+
+[[lanes]]
+min_hz = 430.0
+max_hz = 710.0
+smoothing = 0.65
+
+[[lanes]]
+min_hz = 180.0
+max_hz = 420.0
+smoothing = 0.34
